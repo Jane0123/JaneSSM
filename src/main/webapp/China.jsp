@@ -22,19 +22,20 @@
 <script type="text/javascript">
 	$(function(){
 		$('#ChinaMap').SVGMap({
-			mapWidth: 1600,
-			mapHeight: 700
+			mapWidth: 1000,
+			mapHeight: 500
 		});
 	});
 </script>
 </head>
 <body>
-<div class="wrap" style="margin-top: 50px;">
+<div class="wrap" style="margin-top: 2px;">
+<p style="font-size:30px"><a href="address.jsp">China地图</a></p>
 <div class="itemCon" style="float: left">
 	<div id="ChinaMap" style="margin: 50px;"></div>
 	<div id="stateTip" style="position: absolute;left: 100%;text-align: left;display: inline;"></div>
 </div>
-<div id="mapTipContent" style="width: 900px;height:1400px;margin: 0 auto;display: none">
+<div id="mapTipContent" style="width: 300px;height:700px;margin: 0 auto;display: none">
 	<div class="mapTipText mapTipText0">
 		<div class="mapTipImg"><img src="image/heilongjiang.jpg" alt=""/></div>
 		<div class="mapTipList">

@@ -8,13 +8,14 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.net.InetAddress;
 
 
 
 @Component("b")
 @Scope("singleton")
 public class Jane {
+
+
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("mapper.xml");
@@ -36,7 +37,7 @@ public class Jane {
         System.out.println(FastMath.log(FastMath.PI));
         //10正弦值 排序
         TDoubleArrayList tDoubleArrayList = new TDoubleArrayList();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <=10; i++) {
             tDoubleArrayList.add(sin(i));
         }
         System.out.println("排序前" + tDoubleArrayList);

@@ -19,6 +19,15 @@
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
   <dependencies>
+
+    <dependency>
+      <groupId>jacob</groupId>
+      <artifactId>jacob</artifactId>
+      <version>1</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/lib/jacob.jar</systemPath>
+    </dependency>
+
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjrt</artifactId>

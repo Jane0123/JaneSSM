@@ -24,13 +24,14 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.testng.annotations.Test;
 
 
 import javax.annotation.PostConstruct;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.IOException;
 
@@ -40,7 +41,6 @@ import java.util.*;
 
 @Component
 @Controller
-
 public class TestController {
 
 
@@ -51,6 +51,8 @@ public class TestController {
                 (new SimpleDateFormat("yyyy-MM-dd"),true));
     }
 
+    @Autowired
+    private HttpServletRequest request;//这样使用，request每次进来都是Current Request
 
     @Autowired
     private FlowDao flowDao;
@@ -172,6 +174,21 @@ Leaved leaved=leavelDao.queryById(leaveid);
         ModelAndView mav=new ModelAndView("flow");
         System.out.println(flow);
         return  mav;
+    }
+
+    @RequestMapping("/testrequest")
+    public Object test(HttpServletRequest request){
+            //这样进来request每次都不一样
+            System.out.println("request:"+request.hashCode());
+            return  request.hashCode();
+
+        }
+    @RequestMapping(value = "/prod", produces = {
+            "application/JSON"
+    })
+    @ResponseBody
+    String getProduces() {
+        return "Produces attribute";
     }
 
 
